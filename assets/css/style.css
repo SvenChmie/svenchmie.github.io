@@ -8,13 +8,28 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* Updated Background Color */
-    background-color: #D4EBC0; 
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; 
+    min-height: 100vh; /* Ensure it takes full screen height */
+    background-color: #D4EBC0;
     color: #333;
     text-align: center;
+    padding: 20px;
+}
+
+.hero {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.legal {
+    font-size: 0.75rem; /* Make it smaller */
+    color: #666;
+    margin-top: 40px;
+    line-height: 1.4;
 }
 
 /* Style for your logo */
@@ -33,11 +48,6 @@ body {
 
     /* ... previous styles ... */
     animation: fadeIn 0.5s ease-in;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
 }
 
 .btn {
@@ -59,4 +69,11 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure the legal page scrolls properly if the text is long */
+body:has(.legal-content) {
+    display: block; /* Override flex for the legal page */
+    height: auto;
+    overflow-y: auto;
 }
