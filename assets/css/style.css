@@ -21,8 +21,21 @@ body {
     flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Centers the group vertically */
     align-items: center;
+    
+    /* ADD THIS: Space between logo, text, and button */
+    gap: 20px; 
+    
+    /* ADD THIS: Prevents content from hitting the top/bottom on small screens */
+    padding: 40px 0; 
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 500px; /* Prevents text from stretching too wide on desktop */
+    line-height: 1.6; /* Improves readability */
+    margin: 0; /* Let the 'gap' above handle the spacing */
 }
 
 .legal {
@@ -52,14 +65,13 @@ body {
 
 .btn {
     display: inline-block;
-    padding: 12px 24px;
-    /* Updated Button Color */
+    padding: 15px 30px; /* Increased internal padding for a better look */
     background-color: #FFCE91; 
-    color: #333; /* Darker text for better contrast on light orange */
+    color: #333;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 50px; /* Rounded pill shape looks more modern */
     font-weight: bold;
-    transition: opacity 0.2s;
+    transition: transform 0.2s ease;
 }
 
 .btn:hover {
