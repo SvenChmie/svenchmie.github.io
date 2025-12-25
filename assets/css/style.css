@@ -19,9 +19,20 @@ body {
 
 /* Style for your logo */
 .logo {
-    max-width: 150px; /* Adjust this size as needed */
-    height: auto;
-    margin-bottom: 20px;
+    /* Use a percentage so it scales down on small screens */
+    width: 80%; 
+    
+    /* Set a hard limit so it doesn't get "giant" on desktops */
+    max-width: 200px; 
+    
+    /* Maintains the image's original proportions */
+    height: auto; 
+    
+    /* Adds space between the logo and the text below it */
+    margin-bottom: 24px;
+
+    /* ... previous styles ... */
+    animation: fadeIn 1.5s ease-in;
 }
 
 .hero p {
@@ -43,4 +54,9 @@ body {
 
 .btn:hover {
     opacity: 0.8;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
